@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import navDataConfig from '../mock-data/navbarConfig.json'
 import { TabMenu } from 'primereact/tabmenu';
 import logo from '../logo.svg';
+import { Button } from 'primereact/button';
+import { SlideMenu } from 'primereact/slidemenu';
 
-function Header() {
+const Header = () => {
+	const menu = useRef(null);
 	const [navData, setNavData] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [valueSelected, setValueSelected] = useState({});
@@ -13,22 +16,39 @@ function Header() {
 	}, []);
 
 	function setActiveValue(selectedValue, selectedIndex) {
-		console.log(selectedValue, 'selectedValue')
-		console.log(selectedIndex, 'selectedIndex')
 		setActiveIndex(selectedIndex);
 		setValueSelected(selectedValue);
 	}
 
+	function handleClick() {
+		alert("button clicked")
+	}
+
+	const tabNavData = () => {
+		let TabMenuNavData = navData.slice(0, -1)
+		return TabMenuNavData;
+	}
+
+
 	return (
-		<div className='flex w-full border-b bg-slate-400'>
-			<div className='flex w-1/3'>
-				<img style={{ width: 70, Height: 70 }} src={logo} alt="Company logo" />
-			</div>
-			<div className='w-2/3'>
-				<TabMenu model={navData}
-					activeIndex={activeIndex}
-					onTabChange={(e) => setActiveValue(e.value, e.index)}
-				/>
+		<div className='header-container'>
+			<div className='flex w-10/12 md:container mx-auto items-center'>
+				<img className='w-15 h-12 self-center' src={logo} alt="Company logo" />
+				<div className='hidden md:flex flex-row items-center w-full justify-center'>
+					<TabMenu model={tabNavData()}
+						activeIndex={activeIndex}
+						onTabChange={(e) => setActiveValue(e.value, e.index)}
+					/>
+					<Button className='inset-x-4 h-9 w-25 ' label="Contact Us" onClick={handleClick} />
+				</div>
+				<div className='flex w-full justify-end md:hidden h-8 container mx-auto'>
+					<SlideMenu ref={menu} model={navData} popup autoZIndex={true}
+						viewportHeight={'100%'} menuWidth={'100%'}
+					/>
+					<Button type="button" icon="pi pi-bars"
+						onClick={(event) => menu.current.toggle(event)}
+					/>
+				</div>
 			</div>
 		</div>
 	)
