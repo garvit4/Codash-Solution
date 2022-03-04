@@ -3,32 +3,32 @@
 		{
 			"label": "Home",
 			"key": "home",
-			"path": "/home",
-			"icon": "pi pi-fw pi-home"
+			"path": "/home"
 		},
 		{
 			"label": "Calendar",
 			"key": "calendar",
-			"path": "/calendar",
-			"icon": "pi pi-fw pi-calendar"
+			"path": "/calendar"
 		},
 		{
 			"label": "Edit",
 			"key": "edit",
-			"path": "/edit",
-			"icon": "pi pi-fw pi-pencil"
+			"path": "/edit"
 		},
 		{
 			"label": "Documentation",
 			"key": "documentation",
-			"path": "/documentation",
-			"icon": "pi pi-fw pi-file"
+			"path": "/documentation"
 		},
 		{
 			"label": "Settings",
 			"key": "settings",
-			"path": "/settings",
-			"icon": "pi pi-fw pi-cog"
+			"path": "/settings"
+		},
+		{
+			"label": "Contact Us",
+			"key": "contact",
+			"path": "/contact"
 		}
 	]
 }
