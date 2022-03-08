@@ -3,27 +3,27 @@
 		{
 			"label": "Home",
 			"key": "home",
-			"path": "/home"
+			"path": "/"
 		},
 		{
-			"label": "Calendar",
-			"key": "calendar",
-			"path": "/calendar"
+			"label": "Our Work",
+			"key": "our-work",
+			"path": "/our-work"
 		},
 		{
-			"label": "Edit",
-			"key": "edit",
-			"path": "/edit"
+			"label": "Services",
+			"key": "services",
+			"path": "/services"
 		},
 		{
-			"label": "Documentation",
-			"key": "documentation",
-			"path": "/documentation"
+			"label": "About Us",
+			"key": "about",
+			"path": "/about"
 		},
 		{
-			"label": "Settings",
-			"key": "settings",
-			"path": "/settings"
+			"label": "Verticals",
+			"key": "verticals",
+			"path": "/verticals"
 		},
 		{
 			"label": "Contact Us",
