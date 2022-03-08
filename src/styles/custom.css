@@ -9,12 +9,9 @@
 }
 
 .p-slidemenu{
-    @apply flex md:hidden w-full h-80 z-10 ;
+    @apply flex md:hidden w-full h-80 z-10 top-12 !important ;
 }
 
-.p-slidemenu.p-slidemenu-overlay {
-    position: static;
-}
 
 .p-slidemenu-wrapper{
     width: 100%;
