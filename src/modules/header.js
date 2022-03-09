@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 import navDataConfig from '../mock-data/navbarConfig.json'
 import { TabMenu } from 'primereact/tabmenu';
 import logo from '../logo.svg';
@@ -6,18 +7,19 @@ import { Button } from 'primereact/button';
 import { SlideMenu } from 'primereact/slidemenu';
 
 const Header = () => {
+	const navigate = useNavigate();
 	const menu = useRef(null);
 	const [navData, setNavData] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
-	const [valueSelected, setValueSelected] = useState({});
 
 	useEffect(() => {
 		setNavData(navDataConfig.nav);
 	}, []);
 
 	function setActiveValue(selectedValue, selectedIndex) {
+		let selectedElement = selectedValue.path
 		setActiveIndex(selectedIndex);
-		setValueSelected(selectedValue);
+		navigate(selectedElement)
 	}
 
 	function handleClick() {
