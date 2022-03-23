@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
-import navDataConfig from '../mock-data/navbarConfig.json'
+import {navDataConfig} from '../mock-data/configData'
 import { TabMenu } from 'primereact/tabmenu';
 import logo from '../logo.svg';
 import { Button } from 'primereact/button';
